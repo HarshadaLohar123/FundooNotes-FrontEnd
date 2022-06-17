@@ -1,0 +1,88 @@
+  <div class="group-form">
+    <div class="form-content">
+      <div class="form">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+          <div class="form-head1">
+            <span style="color: blue">F</span>
+            <span style="color: red">u</span>
+            <span style="color: purple">n</span>
+            <span style="color: green">d</span>
+            <span style="color: red">o</span>
+            <span style="color: blue">o</span>
+          </div>
+          <div class="form-head">Create your FundooNotes Account</div>
+  
+          <div class="row">
+            <mat-form-field class="form-cd-rm" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input 
+                matInput
+                placeholder="First Name"
+                formControlName="firstName"
+              />
+              <mat-error>enter your firstName</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input
+              matInput
+              placeholder="Last Name"
+              formControlName="lastName"
+              />
+              <mat-error>enter your lastName</mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="username">
+            <mat-form-field class="form-cd-rm1" appearance="outline">
+              <mat-label>UserName</mat-label>
+              <input matInput  placeholder="UserName" formControlName="email" />
+              <mat-error>enter your username</mat-error>
+            </mat-form-field>
+          </div>
+          <p class="Title">you can use letters,numbers & periods</p>
+  
+          <div class="message2">
+            <p>Use my current email address instead</p>
+          </div>
+  
+          <div class="row">
+            <mat-form-field class="form-cd-rm" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput  placeholder="Password" formControlName="password"/>
+              <mat-error>enter your password</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                matInput
+                placeholder="Confirm Password"
+                formControlName="confirmPassword"
+              />
+            </mat-form-field>
+          </div>
+          <p class="passwordpara">
+            Use 8 or more characters with a mix of letters, numbers & symbols
+          </p>
+          <mat-checkbox class="example-margin"> Show password</mat-checkbox>
+          <div class="btn">
+            <a mat-button routerLink="/login">sign in instead</a>
+            <button mat-raised-button>Next</button>
+          </div>
+        </form>
+      </div>
+      <div class="img-ad">
+        <img
+          src="../../../assets/account (1).svg"
+          width="244"
+          height="244"
+          class=""
+        />
+        <p class="para1">One account. All of Fundoo</p>
+        <p class="para2">working for you.</p>
+      </div>
+    </div>
+  </div>
+  

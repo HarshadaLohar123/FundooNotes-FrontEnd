@@ -1,0 +1,22 @@
+<div class="one" fxLayout="row" fxLayout="row wrap"   >
+    <div *ngFor="let note of childMessage"  >
+
+        <div  class="second" [style.background]="note.color">
+            
+                <div  fxLayout="row" fxLayoutAlign="space-between" class="add-note-input" (click)="openDialog(note)" >
+                   <h3>{{note.title}}</h3>
+                    <img  class="img" src="../../../assets/push pin.svg" >
+                </div> 
+                <div style="margin-bottom: 10px; padding-bottom: 5px; margin-left: 16px;">
+                    <p>{{note.description}}</p>
+                </div>
+                <div> 
+                    <app-icons [childMessage]="note"></app-icons>
+                </div>
+            
+    
+           
+        </div>
+       
+        </div>
+    </div>
