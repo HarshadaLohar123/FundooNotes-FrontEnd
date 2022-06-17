@@ -23,7 +23,13 @@
         </div>
         <div class="menu">
             <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg"/>
-            <img src="../../../assets/profile.svg"/>
+            <!-- <img src="../../../assets/profile.svg"/> -->
+        </div>
+        <div class="menu">
+            <img src="../../../assets/profile.svg"  mat-button [matMenuTriggerFor]="menu"/>
+       <mat-menu #menu="matMenu">
+        <button (click)=" Logout()" mat-menu-item>Logout</button>
+      </mat-menu>
         </div>
     </mat-toolbar>
   

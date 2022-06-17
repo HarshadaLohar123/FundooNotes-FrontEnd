@@ -15,7 +15,7 @@ export class IconsComponent implements OnInit {
   @Output() iconstodisplay=new EventEmitter<string>()
   isTrash:boolean=false;
   isArchive:boolean=false;
-  noteId:any;
+  
 
   
 colorArray=[

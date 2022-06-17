@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/noteservice/note.service';
@@ -9,6 +9,8 @@ import { NoteService } from 'src/app/services/noteservice/note.service';
   styleUrls: ['./update-note.component.scss']
 })
 export class UpdateNoteComponent implements OnInit {
+
+  @Output() noteUpdated = new EventEmitter<any>();
 
   title:any;
   description:any;
@@ -30,6 +32,7 @@ export class UpdateNoteComponent implements OnInit {
     this.title=this.data.title;
     this.description=this.data.description;
     this.color=this.data.color;
+    
     // console.log(this.noteId);    
   }
   onNoClick(): void {
@@ -45,6 +48,7 @@ export class UpdateNoteComponent implements OnInit {
     console.log("data print",data);
     this.note.updateNote(data,this.noteId).subscribe((result:any)=>{
       console.log(result);
+      this.noteUpdated.emit(result)
 
       this.snackBar.open('Note Updated Successfully..!!!', '..', {
         duration: 3000,

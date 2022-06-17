@@ -15,7 +15,9 @@ description:any;
 
   constructor(private note:NoteService,private snackBar:MatSnackBar) { }
 
-  @Output() messageEvent = new EventEmitter<any>();
+ 
+  @Output() createtodisplay = new EventEmitter<string>();
+
 
   ngOnInit(): void {
   }
@@ -25,13 +27,21 @@ description:any;
   close(){
     this.isShow=false;
     console.log(this.title,this.description);
-    let data={
-      title:this.title,
-      description:this.description
+    
+    if((this.title==null || this.title == "")&& (this.description == null || this.description == "")){
+      console.log("values are null");
     }
+    else{
+      let data={
+        title:this.title,
+        description:this.description,
+      }
    this.note.addnote(data).subscribe((res:any)=>{
      console.log(res);
-     this.messageEvent.emit(res)
+     this.title=""
+     this.description=""
+     this.createtodisplay.emit(res)
+
      
    }) 
    this.snackBar.open('Note Created Successfully..!!!','..', {
@@ -42,4 +52,4 @@ description:any;
 
 
 
-}
+}}

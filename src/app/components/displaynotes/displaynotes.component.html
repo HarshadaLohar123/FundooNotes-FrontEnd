@@ -11,7 +11,7 @@
                     <p>{{note.description}}</p>
                 </div>
                 <div> 
-                    <app-icons [childMessage]="note"></app-icons>
+                    <app-icons [childMessage]="note" (iconstodisplay)="recievefromiconstodisplaycard($event)" [childMessage]="note" (noteOperation)="operation($event)"></app-icons>
                 </div>
             
     

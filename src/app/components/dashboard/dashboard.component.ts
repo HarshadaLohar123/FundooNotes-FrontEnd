@@ -1,5 +1,7 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,7 +10,7 @@ import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnDestroy {
-
+token:any;
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
@@ -25,7 +27,7 @@ export class DashboardComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router,private snackBar:MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -35,6 +37,12 @@ export class DashboardComponent implements OnDestroy {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  
+  Logout() {
+    this.token = localStorage.removeItem('token');
+    this.router.navigateByUrl('/login')
+    this.snackBar.open('Logout Successfully..!!!', '..', {
+      duration: 3000,
+    })
+  } 
 }
 
