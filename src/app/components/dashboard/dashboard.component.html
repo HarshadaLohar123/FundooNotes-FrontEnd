@@ -13,7 +13,7 @@
 
       <div class="search-box ">
           <img src="../../../assets/search.svg" width="30px"/>
-            <input matInput placeholder="Search"/>
+            <input (keyup)="searchtitle($event)" matInput placeholder="Search"/>
         </div>
 
         <div class="right-icons">

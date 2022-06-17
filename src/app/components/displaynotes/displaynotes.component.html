@@ -1,5 +1,5 @@
 <div class="one" fxLayout="row" fxLayout="row wrap"   >
-    <div *ngFor="let note of childMessage"  >
+    <div *ngFor="let note of childMessage  | filter:searchword"  >
 
         <div  class="second" [style.background]="note.color">
             
@@ -7,7 +7,7 @@
                    <h3>{{note.title}}</h3>
                     <img  class="img" src="../../../assets/push pin.svg" >
                 </div> 
-                <div style="margin-bottom: 10px; padding-bottom: 5px; margin-left: 16px;">
+                <div (click)="openDialog(note)" style="margin-bottom: 10px; padding-bottom: 5px; margin-left: 16px;">
                     <p>{{note.description}}</p>
                 </div>
                 <div> 

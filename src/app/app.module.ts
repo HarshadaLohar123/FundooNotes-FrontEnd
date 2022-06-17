@@ -32,6 +32,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TrashComponent,
     EditlabelsComponent,
     RemindersComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,FlexLayoutModule,
