@@ -14,6 +14,7 @@ export class DashboardComponent implements OnDestroy {
 token:any;
 value:any;
 mobileQuery: MediaQueryList;
+search:any;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
@@ -55,5 +56,6 @@ mobileQuery: MediaQueryList;
       duration: 3000,
     })
   } 
+  
 }
 

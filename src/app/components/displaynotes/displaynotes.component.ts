@@ -16,12 +16,10 @@ export class DisplaynotesComponent implements OnInit {
 
 sentmsg:any;
 subscription: any;
-searchword: any;
 message:any;
+searchword:any;
 
 constructor(public dialog:MatDialog,private data:DataService) { }
-
-
 
   ngOnInit(): void {
     this.subscription = this.data.currentMessage.subscribe(message => {
@@ -29,6 +27,8 @@ constructor(public dialog:MatDialog,private data:DataService) { }
       console.log(message.data[0]);
       this.searchword = message.data[0]
     });
+
+
   }
 
   openDialog(note:any): void {

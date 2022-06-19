@@ -15,7 +15,9 @@ export class IconsComponent implements OnInit {
   @Output() iconstodisplay=new EventEmitter<string>()
   isTrash:boolean=false;
   isArchive:boolean=false;
-  
+noteId:any;
+color:any;
+notes:any;  
 
   
 colorArray=[
@@ -99,7 +101,10 @@ colorArray=[
   }
 
   changeColor(color:any){
-    
+    this.noteId=[this.childMessage.noteID]
+    let data={
+      color:color
+    }
     console.log(this.childMessage);
     this.note.ChangeColor(this.childMessage.noteID,color).subscribe((response:any)=>{
       console.log('Note color changed',response);

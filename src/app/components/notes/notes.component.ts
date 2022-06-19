@@ -9,7 +9,7 @@ import { NoteService } from 'src/app/services/noteservice/note.service';
 export class NotesComponent implements OnInit {
 
   noteArray:any;
-
+  
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {

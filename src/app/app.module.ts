@@ -33,7 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FilterPipe } from './pipe/filter.pipe';
-
+import { AuthorizationService } from './services/Authservice/authorization.service';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,9 @@ import { FilterPipe } from './pipe/filter.pipe';
     MatMenuModule,MatSnackBarModule,MatDialogModule
 
   ],
-  providers: [],
+  providers: [
+    AuthorizationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

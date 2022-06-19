@@ -16,5 +16,4 @@ export class FilterPipe implements PipeTransform {
       return note.title.includes(args) | note.description.includes(args);
     })
   }
-
 }

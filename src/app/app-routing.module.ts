@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './Authguard/auth.guard';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditlabelsComponent } from './components/editlabels/editlabels.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'forgot',component:ForgotpasswordComponent},
   {path:'reset-password/:token',component:ResetpasswordComponent},
-  {path:'dashboard',component:DashboardComponent,
+  {path:'',redirectTo:"/login",pathMatch:'full'},
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard],
 
   children:[
     {path:'notes',component:NotesComponent},
